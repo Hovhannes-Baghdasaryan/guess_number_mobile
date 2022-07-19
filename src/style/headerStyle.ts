@@ -2,14 +2,14 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
 	header: {
+		height: "auto",
 		width: "100%",
-		height: 90,
-		backgroundColor: "#f7287b",
+		paddingVertical: 20,
 		alignItems: "center",
-		justifyContent: "flex-end",
+		backgroundColor: "#f7287b",
 	},
 	headerTitle: {
 		fontSize: 19,
-		marginBottom: 20,
+		marginBottom: 8,
 	},
 });
