@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { TouchableWithoutFeedback, View } from "react-native";
+import { Keyboard, TouchableWithoutFeedback, View } from "react-native";
 
 // component import
-import Header from "./src/layout/Header";
-import StartGameScreen from "./src/screens/StartGameScreen";
 import GameInProgressScreen from "./src/screens/GameInProgressScreen";
+import StartGameScreen from "./src/screens/StartGameScreen";
 import GameOverScreen from "./src/screens/GameOverScreen";
+import Header from "./src/layout/Header";
 
-// util import
-import { dismissOnPress } from "./src/util/dismissOnPress";
+// style import
+import { styles } from "./src/style/gameStyle";
 
 const App = () => {
 	const [userNumber, setUserNumber] = useState<number>(0);
@@ -19,29 +19,27 @@ const App = () => {
 	};
 
 	return (
-		<TouchableWithoutFeedback onPress={dismissOnPress}>
-			<View style={{ flex: 1 }}>
+		<TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+			<View style={styles.appMain}>
 				<Header title="Guess a Number" />
-				{guessRounds !== 0 ? (
-					<GameOverScreen
-						setGuessRounds={setGuessRounds}
-						setUserNumber={setUserNumber}
-						userNumber={userNumber}
-						guessRounds={guessRounds}
-					/>
-				) : (
-					<>
-						{userNumber ? (
-							<GameInProgressScreen
-								setUserNumber={setUserNumber}
-								userChoice={userNumber}
-								setGuessRounds={setGuessRounds}
-							/>
-						) : (
-							<StartGameScreen onStartGame={startGameHandler} />
-						)}
-					</>
-				)}
+				<View style={styles.centerMainCard}>
+					{guessRounds !== 0 ? (
+						<GameOverScreen
+							setGuessRounds={setGuessRounds}
+							setUserNumber={setUserNumber}
+							userNumber={userNumber}
+							guessRounds={guessRounds}
+						/>
+					) : (
+						<>
+							{userNumber ? (
+								<GameInProgressScreen setUserNumber={setUserNumber} userChoice={userNumber} setGuessRounds={setGuessRounds} />
+							) : (
+								<StartGameScreen onStartGame={startGameHandler} />
+							)}
+						</>
+					)}
+				</View>
 			</View>
 		</TouchableWithoutFeedback>
 	);

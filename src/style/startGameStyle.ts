@@ -2,8 +2,8 @@ import { StyleSheet } from "react-native";
 
 export const MainStyles = StyleSheet.create({
 	gameContainer: {
-		alignItems: "center",
 		justifyContent: "flex-start",
+		alignItems: "center",
 		paddingVertical: 10,
 		width: "100%",
 		flex: 1,
@@ -11,9 +11,6 @@ export const MainStyles = StyleSheet.create({
 	title: {
 		fontSize: 22,
 		marginBottom: 10,
-	},
-	button: {
-		width: 90,
 	},
 	summaryContainer: {
 		marginTop: 20,
