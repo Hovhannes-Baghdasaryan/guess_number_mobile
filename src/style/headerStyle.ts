@@ -4,9 +4,10 @@ export const styles = StyleSheet.create({
 	header: {
 		height: "auto",
 		width: "100%",
-		paddingVertical: 20,
+		paddingTop: 60,
+		paddingBottom: 20,
 		alignItems: "center",
-		backgroundColor: "#f7287b",
+		backgroundColor: "#f7287b"
 	},
 	headerTitle: {
 		fontSize: 19,
