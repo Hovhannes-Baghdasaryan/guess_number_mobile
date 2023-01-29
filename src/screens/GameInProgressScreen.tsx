@@ -39,14 +39,14 @@ const GameInProgressScreen: React.FC<GameInProgressScreenPropType> = props => {
 	const onButtonPress = (choice: string) => () => {
 		if (choice === "higher") {
 			if (userChoice > guessNumber) {
-				Alert.alert("Don't Lie", "sxala ches jogum");
+				Alert.alert("Don't Lie", "the value is lower");
 				return;
 			}
 
 			lowRef.current = guessNumber;
 		} else {
 			if (userChoice < guessNumber) {
-				Alert.alert("Don't Lie", "sxala ches jogum");
+				Alert.alert("Don't Lie", "the value is higher");
 				return;
 			}
 
